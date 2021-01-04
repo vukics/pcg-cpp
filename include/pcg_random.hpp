@@ -591,7 +591,7 @@ operator<<(std::basic_ostream<CharT,Traits>& out,
 
     out << rng.multiplier() << space
         << rng.increment() << space
-        << rng.state_;
+        << rng.state_ << space;
 
     out.flags(orig_flags);
     out.fill(orig_fill);
@@ -1487,6 +1487,8 @@ operator<<(std::basic_ostream<CharT,Traits>& out,
     for (const auto& datum : rng.data_)
         out << space << datum;
 
+    out << space;
+    
     out.flags(orig_flags);
     out.fill(orig_fill);
     return out;
